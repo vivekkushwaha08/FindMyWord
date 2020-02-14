@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMyWord", "FindMyWord\FindMyWord.csproj", "{5B101C01-741D-4D1D-9189-562C59F8E40E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FindWordSetup", "FindWordSetup\FindWordSetup.vdproj", "{6547D659-DAE2-4D7D-9127-A157522873EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B101C01-741D-4D1D-9189-562C59F8E40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B101C01-741D-4D1D-9189-562C59F8E40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B101C01-741D-4D1D-9189-562C59F8E40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B101C01-741D-4D1D-9189-562C59F8E40E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6547D659-DAE2-4D7D-9127-A157522873EB}.Debug|Any CPU.ActiveCfg = Debug
+		{6547D659-DAE2-4D7D-9127-A157522873EB}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD3005C0-87A1-4184-A6C4-C2C130CDEEE4}
+	EndGlobalSection
+EndGlobal
