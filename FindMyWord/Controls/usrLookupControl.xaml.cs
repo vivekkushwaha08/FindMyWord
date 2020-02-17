@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FindMyWord.Controls
 {
@@ -31,22 +20,32 @@ namespace FindMyWord.Controls
             string textToSearch = txtLookupText.Text;
             if (!string.IsNullOrEmpty(textToSearch))
             {
-                Microsoft.Office.Interop.Word.Document document = Globals.ThisAddIn.Application.ActiveDocument;
-                if (document != null)
+                try
                 {
-                    object missing = null;
-                    Microsoft.Office.Interop.Word.Range rng = document.Content;
-                    rng.Find.ClearFormatting();
-                    rng.Find.Forward = true;
-                    rng.Find.Text = textToSearch;
-                    object highlightColor = System.Drawing.Color.Yellow;
-                    if(rng.Find.HitHighlight( 
-                        textToSearch, ref highlightColor, ref missing, ref missing, ref missing,
-                        ref missing, ref missing, ref missing, ref missing, ref missing,
-                        ref missing, ref missing, ref missing, ref missing, ref missing))
+                    Microsoft.Office.Interop.Word.Document document = Globals.ThisAddIn.Application.ActiveDocument;
+                    if (document != null)
                     {
-                        
+
+                        Microsoft.Office.Interop.Word.Range rng = document.Content;
+                        rng.Find.ClearFormatting();
+                        rng.Find.Forward = true;
+                        rng.Find.Text = textToSearch;
+                        object highlightColor = System.Drawing.Color.Yellow;
+
+                        var rndForScroll = document.Content;
+                        // Find fist occurence
+                        if (rndForScroll.Find.Execute(FindText: textToSearch, MatchWholeWord: true) && rndForScroll.Paragraphs.First != null)
+                        {
+                            // scroll to first occurence
+                            Globals.ThisAddIn.Application.ActiveWindow.ScrollIntoView(rndForScroll.Paragraphs.First.Range, true);
+                            //Highlight all occurence
+                            rng.Find.HitHighlight(FindText: textToSearch, HighlightColor: highlightColor, MatchWholeWord: true);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }

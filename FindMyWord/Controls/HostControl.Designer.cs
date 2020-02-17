@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.wpfElementHost = new System.Windows.Forms.Integration.ElementHost();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.elementHost1);
+            this.panel1.Controls.Add(this.wpfElementHost);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -44,13 +44,13 @@
             // 
             // elementHost1
             // 
-            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.elementHost1.Location = new System.Drawing.Point(0, 0);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(381, 161);
-            this.elementHost1.TabIndex = 0;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = null;
+            this.wpfElementHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wpfElementHost.Location = new System.Drawing.Point(0, 0);
+            this.wpfElementHost.Name = "elementHost1";
+            this.wpfElementHost.Size = new System.Drawing.Size(381, 161);
+            this.wpfElementHost.TabIndex = 0;
+            this.wpfElementHost.Text = "elementHost1";
+            this.wpfElementHost.Child = null;
             // 
             // HostControl
             // 
@@ -67,6 +67,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private System.Windows.Forms.Integration.ElementHost wpfElementHost;
     }
 }

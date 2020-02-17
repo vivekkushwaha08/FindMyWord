@@ -12,7 +12,7 @@ namespace FindMyWord
     {
         private void findWordRibbon_Load(object sender, RibbonUIEventArgs e)
         {
-            Globals.ThisAddIn.CustomTaskPanes.Add(new Controls.HostControl(), "Find My Word");
+            Globals.ThisAddIn.CustomTaskPanes.Add(new Controls.HostControl(new Controls.usrLookupControl()), "Find My Word");
             Globals.ThisAddIn.CustomTaskPanes[0].Visible = false;
         }
 
