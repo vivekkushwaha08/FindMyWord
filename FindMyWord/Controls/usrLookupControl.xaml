@@ -4,16 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FindMyWord.Controls"
-             mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="200">
-    <Grid Margin="0,0,0,0">
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="43" Margin="10,10,0,0" Stroke="Aquamarine" VerticalAlignment="Top" Width="180"/>
+             mc:Ignorable="d" d:DesignWidth="250" Height="622.034">
+    <Grid Margin="0,0,0,537">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <DataTemplate x:Key="RangeTemplate" >
+                <TextBlock Text="{Binding Text}" ></TextBlock>
+            </DataTemplate>
+        </Grid.Resources>
+        <Rectangle
+            Grid.Row="0" Grid.Column="0"
+            Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="43" Margin="10,10,0,0" Stroke="Aquamarine" VerticalAlignment="Top" Width="180"/>
         <TextBox x:Name="txtLookupText" HorizontalAlignment="Left" Height="23" Margin="19,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnSearch" Content="" HorizontalAlignment="Left" Margin="152,19,0,0" VerticalAlignment="Top" Width="27" Height="23" IsDefault="True" IsCancel="True" Uid="btnSearch" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/icon_search.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-
     </Grid>
 </UserControl>
